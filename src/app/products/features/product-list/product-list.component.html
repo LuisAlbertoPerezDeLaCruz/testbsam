@@ -1,31 +1,30 @@
-@switch (productState.state.status()) {
-  @case ("loading") {
-    <p>Loading...</p>
-  }
-  @case ("error") {
-    <p>Error!</p>
-  }
-  @default {
-    <p>Loaded!</p>
-    <div class="mx-auto max-w-screen-xl">
-      <div class="flex justify-end my-6">
-        <button
-          (click)="changePage()"
-          type="button"
-          class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800"
-        >
-          Cambiar página
-        </button>
-      </div>
-      <div class="grid grid-cols-[repeat(4,300px)] gap-6">
-        @for (product of productState.state().products; track product) {
-          <app-product-card
-            class="block"
-            [product]="product"
-            (addToCart)="addToCart(product)"
-          />
-        }
-      </div>
+<h1>Aqui</h1>
+@switch (productState.state.status()) { @case ("loading") {
+<p>Loading...</p>
+} @case ("error") {
+<p>Error!</p>
+} @default {
+<p>Loaded!</p>
+<div class="mx-auto max-w-screen-xl">
+  <div class="flex justify-end my-6">
+    <button
+      (click)="changePage()"
+      type="button"
+      class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800"
+    >
+      Cambiar página
+    </button>
+  </div>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    @for (product of productState.state().products; track product) {
+    <div class="col">
+      <app-product-card
+        class="d-block"
+        [product]="product"
+        (addToCart)="addToCart(product)"
+      />
     </div>
-  }
-}
+    }
+  </div>
+</div>
+} }

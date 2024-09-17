@@ -1,52 +1,14 @@
 <a [routerLink]="['product', product().id]">
-  <div
-    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-  >
-    <picture href="#">
-      <img
-        class="rounded-t-lg h-60 w-full object-contain object-center"
-        [src]="product().image"
-        alt=""
-      />
-    </picture>
-    <div class="p-5">
-      <a href="#">
-        <h5
-          class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-1"
-        >
-          {{ product().title }}
-        </h5>
-      </a>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-3">
+  <div class="card" style="width: 18rem">
+    <img [src]="product().image" alt="" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ product().title }}</h5>
+      <p class="card-text">
         {{ product().description }}
       </p>
-      <div class="flex justify-end mx-4">
-        <button
-          href="#"
-          (click)="add($event)"
-          class="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-center text-white bg-green-600 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-500 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-        >
-          <svg
-            class="w-6 h-6 text-white"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
-            />
-          </svg>
-
-          Agregar al carrito
-        </button>
-      </div>
+      <button href="#" (click)="add($event)" class="btn btn-primary">
+        Go somewhere
+      </button>
     </div>
   </div>
 </a>
